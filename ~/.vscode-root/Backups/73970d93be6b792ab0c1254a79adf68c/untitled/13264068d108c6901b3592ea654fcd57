@@ -1,0 +1,58 @@
+untitled:Untitled-1
+renderCodeInput() {
+        const {
+            auth,
+        } = this.props;
+        return (
+            <View
+                style={{  
+                    paddingRight: 20,
+                    paddingLeft: 20
+                }}
+            >
+                <Item 
+                    rounded 
+                    style={{
+                        backgroundColor: 'white', 
+                        alignContent: 'center',
+                    }}
+                >
+                    <Input
+                        style={{
+                            textAlign: 'center',
+                            fontSize: 20, 
+                            color: '#042a41', 
+                            fontWeight: 'bold'  
+                        }}
+                        maxLength={8}
+                        keyboardType={'numeric'}
+                        placeholder='confirmation code here'
+                        onChangeText={this.onCodeChange.bind(this)}
+                        value={}
+                    />
+                </Item>
+                {(auth.codeInput !== '' ) &&
+                <Button 
+                    light 
+                    rounded
+                    style={{
+                        width: '100%', 
+                        marginTop: 10, 
+                        justifyContent: 'center' 
+                    }}
+                    onPress={this.onCodeButtonPress.bind(this)}
+                >
+                    <Text
+                        style={{ 
+                            fontSize: 20, 
+                            color: '#042a41',
+                            fontWeight: 'bold'
+                        }}
+                    >
+                    Enter Code
+                    </Text>
+                </Button>}
+            </View>
+        );
+    }
+    
